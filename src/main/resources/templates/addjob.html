@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add your Posting</title>
+<link rel="stylesheet" type="text/css" media="all"
+ href="../static/css/add.css"
+ th:href="@{/css/add.css}" />
+</head>
+<body>
+<h1 class="adb" align="center">Add your job posting with us</h1>
+<div class="ad">
+ 
+<form action="addjob.kar" method="get"><br><br>
+Job Id:<input type="text" name="jobid"><br><br>
+Company Name:<input type="text" name="company"><br><br>
+Job Title:<input type="text" name="position"><br><br>
+Employment Type::<input type="text" name="ptype"><br><br>
+Status:<select type="dropdown" name="status">
+  <option value="OPEN">Open</option>
+  <option value="CLOSE">Close</option>
+  <option value="CANCELLED">Cancelled</option>
+ </select><br><br>
+ <center>
+<input type="SUBMIT" class="btn" name="submit"></center>
+
+</form>
+ 
+</div>
+ 
+<br><br>
+<center>
+Go to:<a href="http://localhost:8080/showjobs">View Posting</a>|<a href="/">Home Page</a>
+</center>
+</body>
+</html>

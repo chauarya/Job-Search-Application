@@ -1,0 +1,30 @@
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+ <head>
+ <link rel="stylesheet" type="text/css" media="all"
+ href="../static/css/add.css"
+ th:href="@{/css/add.css}" />
+ </head>
+<body>
+<h1  class="adb" align="center">Update Contact List</h1>
+<div class="ad">
+<form action="/modify" method="get"> <br><br>
+ Job Id:<input type="text" name="jobid" th:value="${jb.jobid}"><br><br>
+Company:<input type="text" name="company" th:value="${jb.company}"><br><br>
+Job Title<input type="text" name="position" th:value="${jb.position}"><br><br>
+Employment Type:<input type="text" name="ptype" th:value="${jb.ptype}"><br><br>
+Status:<input type="text" name="status" th:value="${jb.status}"><br><br>
+
+<br>
+<center>
+<input type="hidden" name="id" th:value="${jb.id}"/><br>
+<input class="btn" type="submit"  name="submit" />
+</center>
+</form>
+<center>
+Go to:<a href="/ap">Add Posting</a>|<a href="/">Home Page</a>
+</center>
+
+</div>
+
+</body>
+</html>

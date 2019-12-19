@@ -1,0 +1,54 @@
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+ <head>
+ <link rel="stylesheet" type="text/css" media="all"
+ href="../static/css/add.css"
+ th:href="@{/css/add.css}" />
+ </head>
+<body>
+<h1 class="adb" align="center">Welcome to your Job Search Page</h1><br><br>
+<form action="/Dummy" method="get">
+<h2>Click the button to generate Dummy Record</h2>
+<input type="submit" class="btn" value="Generate Dummy">
+</form>
+
+<form action="search" method="get">
+<center>
+Search by:<select type="dropdown" name="by"> 
+ 
+  <option value="jobid">Job Id</option>
+  <option value="company">Company</option>
+  <option value="position">Job Title</option>
+  <option value="ptype">Employment Type</option>
+  <option value="status" >Status</option>
+ </select><input type="text" name="searchf" placeholder="Enter Keyword"><input  class="btn1" type="submit" value="Search">
+ </center>
+ </form>
+ <table>
+<tr>
+ 
+	<th>Job Id</th>
+	<th>Company</th>
+	<th>Job Title</th>
+	<th>Employment Type</th>
+	<th>Status</th>
+	<th></th>
+	<th></th>
+</tr>
+<tr>
+	<tr th:each="conNum : ${conNum}">
+	<td th:text="${conNum.jobid}">as</td>
+	<td th:text="${conNum.company}">as</td>
+	<td th:text="${conNum.position}">as</td>
+	<td th:text="${conNum.ptype}">as</td>
+	<td th:text="${conNum.status}">as</td>
+	<td><a href="" th:href="@{/editLink/{id}(id=${conNum.Id})}">EDIT</a></td>
+	<td><a href="" th:href="@{/deleteLink/{id}(id=${conNum.Id})}">DELETE</a></td>
+	</tr>
+	 
+</table>
+<br><br>
+<center>
+Go to:<a href="/ap">Add Posting</a>|<a href="/">Home Page</a>
+</center>
+</body>
+</html>
